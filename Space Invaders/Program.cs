@@ -1,7 +1,9 @@
 ﻿using System;
+using Space_Invaders;
 
 namespace Space_Invaders
 {
+#if WINDOWS || LINUX
     /// <summary>
     /// The main class.
     /// </summary>
@@ -13,8 +15,9 @@ namespace Space_Invaders
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new Main())
                 game.Run();
         }
     }
+#endif
 }
