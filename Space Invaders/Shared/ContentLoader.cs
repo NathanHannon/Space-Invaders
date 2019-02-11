@@ -47,7 +47,6 @@ namespace Space_Invaders.Shared
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        //TODO: Fix SFX loading bug.
         public static SoundEffect GetSfx(string path)
         {
             SoundEffect soundEffect = _game.Content.Load<SoundEffect>(path);
