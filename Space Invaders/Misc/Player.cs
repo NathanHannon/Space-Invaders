@@ -62,20 +62,22 @@ namespace Space_Invaders.Misc
             laserSound.Play();
         }
 
-        private void CheckCollision()
+        public bool CheckCollision()
         {
-            for (int i = 0; i < SceneController.CurrentScene.GameObjects.Count; i++)
+            for (ushort visibleEnemies = 0; visibleEnemies < SceneController.CurrentScene.GameObjects.Count; visibleEnemies++)
             {
-                BaseObject currentEnemy = SceneController.CurrentScene.GameObjects[i];
+                BaseObject currentEnemy = SceneController.CurrentScene.GameObjects[visibleEnemies];
                 if (currentEnemy.ObjectTag == "Enemy" && currentEnemy.IsVisible)
                 {
                     if (Collision(currentEnemy))
                     {
                         //Quits to main menu upon game over
-                        SceneController.ChangeScene(0);
+                        SceneController.ChangeScene(4);
+                        return true;
                     }
                 }
             }
+            return true;
         }
 
         private bool Collision(BaseObject baseObject)

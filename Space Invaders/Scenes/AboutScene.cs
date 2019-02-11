@@ -9,7 +9,7 @@ namespace Space_Invaders.Scenes
     public class AboutScene : BaseScene
     {
         private SpriteFont _spriteFont;
-        private SpriteFont titleFont;
+        private SpriteFont _titleFont;
         public Button backButton;
         public AboutScene(int SceneID) : base(SceneID)
         {
@@ -17,7 +17,7 @@ namespace Space_Invaders.Scenes
 
         public override void LoadContent()
         {
-            titleFont = ContentLoader.GetFont("Fonts/Title");
+            _titleFont = ContentLoader.GetFont("Fonts/Title");
             _spriteFont = ContentLoader.GetFont("Fonts/Regular");
 
             backButton = new Button(ContentLoader.GetTexture("Images/button"), new Vector2(200f, 200f), new Vector2(Button.buttonScaleX, Button.buttonScaleY), "Back", "Button");
@@ -29,7 +29,7 @@ namespace Space_Invaders.Scenes
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(titleFont, "Space Invaders", new Vector2(320, 40f), Color.White);
+            spriteBatch.DrawString(_titleFont, "Space Invaders", new Vector2(320, 40f), Color.White);
             spriteBatch.DrawString(_spriteFont, "Nathan Hannon", new Vector2(320f, 80f), Color.White);
             base.Draw(spriteBatch);
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Graphics.PackedVector;
 using Space_Invaders.Misc;
 using Space_Invaders.Scenes;
 using Space_Invaders.Shared;
@@ -9,10 +10,10 @@ namespace Space_Invaders.Controllers
 {
     public class EnemyController
     {
-        private int _enemyRows;
-        private int _enemyColumns;
+        private ushort _enemyRows;
+        private ushort _enemyColumns;
         private const float EnemySpacing = 20f;
-        private int _visibleEnemies;
+        private ushort _visibleEnemies;
 
         private List<BaseObject> _enemyList = new List<BaseObject>();
         private BaseScene _gameScene;
@@ -22,7 +23,7 @@ namespace Space_Invaders.Controllers
         /// <param name="enemyRows"></param>
         /// <param name="enemyColumns"></param>
         /// <param name="gameScene"></param>
-        public EnemyController(int enemyRows, int enemyColumns, BaseScene gameScene)
+        public EnemyController(ushort enemyRows, ushort enemyColumns, BaseScene gameScene)
         {
             _enemyRows = enemyRows;
             _enemyColumns = enemyColumns;
@@ -35,9 +36,9 @@ namespace Space_Invaders.Controllers
         private void GenerateEnemies()
         {
             Texture2D enemyTexture = ContentLoader.GetTexture("Images/invader");
-            for (int rows = 0; rows < _enemyRows; rows++)
+            for (ushort rows = 0; rows < _enemyRows; rows++)
             {
-                for (int columns = 0; columns < _enemyColumns; columns++)
+                for (byte columns = 0; columns < _enemyColumns; columns++)
                 {
                     Vector2 scale = new Vector2(70f, 70f);
                     float xPosition = ((scale.X + EnemySpacing) * rows) + 100f;
@@ -67,7 +68,6 @@ namespace Space_Invaders.Controllers
             if (_visibleEnemies == 0)
             {
                 SceneController.ChangeScene(0);
-
             }
         }
     }

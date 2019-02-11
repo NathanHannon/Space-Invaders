@@ -9,8 +9,8 @@ namespace Space_Invaders.Shared
         public static int ScreenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
         public static int ScreenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         public static float DelayTime;
-        public static int Score;
-        public static int FirstScene = 0;
+        public static ushort Score;
+        public static byte FirstScene = 0;
         public static bool CursorVisible = false;
     }
 }

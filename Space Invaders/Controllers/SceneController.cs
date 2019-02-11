@@ -26,7 +26,7 @@ namespace Space_Invaders.Controllers
             Scenes.Add(scene);
         }
 
-        public static void ChangeScene(int SceneID)
+        public static void ChangeScene(byte SceneID)
         {
             CurrentScene?.UnloadContent();//Unloads Current Scene.
             CurrentScene = Scenes[SceneID];//Changes scene based on ID.
