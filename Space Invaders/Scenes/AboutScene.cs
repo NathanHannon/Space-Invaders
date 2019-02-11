@@ -29,8 +29,10 @@ namespace Space_Invaders.Scenes
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(_titleFont, "Space Invaders", new Vector2(320, 40f), Color.White);
-            spriteBatch.DrawString(_spriteFont, "Nathan Hannon", new Vector2(320f, 80f), Color.White);
+            spriteBatch.DrawString(_titleFont, "About", new Vector2(375f, 160f), Color.White);
+            spriteBatch.DrawString(_spriteFont, "A remake of the classic game 'Space Invaders'.", new Vector2(187.5f, 200f), Color.White);
+            spriteBatch.DrawString(_spriteFont, "Music From OpenGameArt.org by user 'maxstack'.", new Vector2(187.5f, 220f), Color.White);
+            spriteBatch.DrawString(_spriteFont, "Sound Effects From OpenGameArt.org by user 'Triki Minut'.", new Vector2(187.5f, 240f), Color.White);
             base.Draw(spriteBatch);
         }
         private void BackButton_Click(object sender, EventArgs e)
