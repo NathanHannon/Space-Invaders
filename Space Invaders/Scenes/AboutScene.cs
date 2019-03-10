@@ -20,7 +20,7 @@ namespace Space_Invaders.Scenes
             _titleFont = ContentLoader.GetFont("Fonts/Title");
             _spriteFont = ContentLoader.GetFont("Fonts/Regular");
 
-            backButton = new Button(ContentLoader.GetTexture("Images/button"), new Vector2(200f, 200f), new Vector2(Button.buttonScaleX, Button.buttonScaleY), "Back", "Button");
+            backButton = new Button(ContentLoader.GetTexture("Images/button"), new Vector2(200f, 400f), new Vector2(Button.buttonScaleX, Button.buttonScaleY), "Back", "Button");
             backButton.Position.X = (Global.ScreenWidth / 2f) - (backButton.Scale.X / 2f);
             backButton.ClickButton += BackButton_Click;
 
