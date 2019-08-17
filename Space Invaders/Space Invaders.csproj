@@ -72,7 +72,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controllers\EnemyController.cs" />
-    <Compile Include="Controllers\InputController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Controllers\MouseController.cs" />
     <Compile Include="Controllers\SceneController.cs" />
