@@ -13,7 +13,7 @@ namespace Space_Invaders.Scenes
         public List<BaseObject> GameObjects = new List<BaseObject>();
 
 
-        public BaseScene(int SceneID)
+        protected BaseScene(int SceneID)
         {
             SceneIndex = SceneID;
             SceneController.AddScene(this);
